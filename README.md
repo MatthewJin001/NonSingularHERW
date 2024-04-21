@@ -18,7 +18,7 @@ nonsingular HE&RW calibration methods. This repository contains the implementati
 
 
 <p align="center">
-   <img src="figure/PIC2.png" width="100%">
+   <img src="figure/PIC2.png" width="80%">
 </p>
 
 **_Figure_**: In pose-based calibration (left), the camera pose estimation is performed independently before the HE&RW estimation. In point-based calibration (right), the HE&RW estimation is conducted directly without camera pose estimation.
