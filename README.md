@@ -46,15 +46,6 @@ where
 * ``tX_out`` (3×1)： the translation vector of the robot-world pose (unit: m).
 Note that ``n`` is the measurement number and ``m`` is the pattern point number.
 
-The comparison methods include
-* ``HECrot`` : forward separate method,
-* ``HECtran`` : backward separate method,
-* ``HECsim`` :  simultaneous method,
-* ``HECTsai`` : Tsai's method,
-* ``HECWu`` : Wu's method,
-* ``HECSARA`` : Sarabandi's method.
-
-
 ### Demos
 * ``Demo1`` : Demo 1 shows that under SCARA data, conventional methods do not converge iteratively (i.e. singular), while the proposed method can converge to stable values.
 * ``Demo2`` : Demo 2 shows the adaptation scenarios of non-singular pose-based and point-based methods.
