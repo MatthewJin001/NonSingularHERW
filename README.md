@@ -14,7 +14,7 @@ Nonsingular Hand-Eye and Robot-World Calibration for SCARA-Type Robots: A Compar
 Four degree-of-freedom SCARA robots are increasingly used in industry due to their unique advantages in speed and accuracy. When integrated into visual-guided systems with cameras, SCARA robots require hand-eye and robot-world (HE&RW) calibration to establish the system’s geometric relationships. The common calibration methods are pose-based or point-based, which have been widely validated on full degree-of-freedom articulated robots. However, these methods may appear singular and unusable due to SCARA’s restricted movement. 
 
 Inspired by this, we conduct a thorough study on HE&RW calibration for SCARA robots. In the above reference paper, we first analyze the reasons for the SCARA singularity of conventional methods from the perspective of nonlinear least squares. Then, we redefine parameters with clear geometric interpretation and propose two
-nonsingular HE&RW calibration methods. This repository contains the implementations of the four methods discussed in our article：1) the conventional pose-based method, 2) the proposed posebased method, 3) the conventional point-based method, and 4) the proposed point-based method. Besides, we provide two demos for testing.
+nonsingular HE&RW calibration methods. This repository contains the implementations of the four methods discussed in our article：1) ``con_pose`` the conventional pose-based method, 2) ``pro_pose`` the proposed pose-based method, 3) ``con_point`` the conventional point-based method, and 4) ``pro_point`` the proposed point-based method. Besides, we provide two demos for testing.
 
 
 <p align="center">
@@ -33,16 +33,18 @@ The code runs on Matlab R2023a without any additional dependencies. All necessar
 ### Main Instructions
 To perform the HE&RW calibration, taking the proposed pose-based method as an example, call
 ```
-[R_out,t_out,rnti]=HECfuse(RAin,tAin,RBin,tBin)
+[RX_out,tX_out,RY_out,tY_out]=pro_pose(RAi,tAi,qij,rj,K)
 ```
 where
-* ``RAin`` (3x3xn): rotation matrix of A,
-* ``tAin`` (3xn): translation vector of A (unit: m),
-* ``RBin`` (3x3xn): rotation matrix of B,
-* ``tBin`` (3x3xn): translation vector of B (unit: m),
-* ``R_out`` (3x3): rotation matrix of hand-eye pose,
-* ``t_out`` (3x1): translation vector of hand-eye pose (unit: m),
-* ``rnti`` (1×1)： runtime (unit: seconds).
+* ``RAi`` (3x3xn): the rotation matrice of the robot poses,
+* ``tAi`` (3xn): the translation vectors of the robot poses (unit: m),
+* ``qij`` (2xnxm): the pattern point pixels,
+* ``rj`` (3xm): the pattern point positions (unit: m),
+* ``RX_out`` (3x3): the rotation matrix of the hand-eye pose,
+* ``tX_out`` (3x1): the translation vector of the hand-eye pose (unit: m),
+* ``RY_out`` (3×3)： the rotation matrix of the robot-world pose.
+* ``tX_out`` (3×1)： the translation vector of the robot-world pose (unit: m).
+Note that ``n`` is the measurement number and ``m`` is the pattern point number.
 
 The comparison methods include
 * ``HECrot`` : forward separate method,
@@ -52,18 +54,10 @@ The comparison methods include
 * ``HECWu`` : Wu's method,
 * ``HECSARA`` : Sarabandi's method.
 
-Please refer to the submitted article or reference for details.
 
 ### Demos
-Demo ``main1``, ``main2``, and ``main3`` correspond to the accuracy comparison of different types of methods, while Demo ``main4`` is a comparison of computational efficiency. When the program ends, a visual result will be presented.
+* ``Demo1`` : Demo 1 shows that under SCARA data, conventional methods do not converge iteratively (i.e. singular), while the proposed method can converge to stable values.
+* ``Demo2`` : Demo 2 shows the adaptation scenarios of non-singular pose-based and point-based methods.
 
+## Please refer to the submitted article or reference for details.
 
-## Reference
-* Tsai R Y, Lenz R K. A new technique for fully autonomous and efficient 3 d robotics hand/eye calibration[J]. IEEE Transactions on robotics and automation, 1989, 5(3): 345-358.
-* Wu J, Sun Y, Wang M, et al. Hand-eye calibration: 4-D procrustes analysis approach[J]. IEEE Transactions on Instrumentation and Measurement, 2019, 69(6): 2966-2981
-* Sarabandi S, Porta J M, Thomas F. Hand-eye calibration made easy through a closed-form two-stage method[J]. IEEE Robotics and Automation Letters, 2022, 7(2): 3679-3686. 
-
-
-## Contact
-
-Gumin Jin, Department of Automation, Shanghai Jiao Tong University, Shanghai, jingumin@sjtu.edu.cn
