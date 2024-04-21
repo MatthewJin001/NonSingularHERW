@@ -1,12 +1,12 @@
 ## Nonsingular Hand-Eye and Robot-World Calibration for SCARA-Type Robots
 
 ## Reference paper
-Nonsingular Hand-Eye and Robot-World Calibration for SCARA-Type Robots: A Comparative Study（2024）, submitted to IEEE TII.
+Nonsingular Hand-Eye and Robot-World Calibration for SCARA-Type Robots: A Comparative Study (2024), submitted to IEEE TII.
 
 ## Overview
 
 <p align="center">
-   <img src="figure/PIC1.png" width="75%">
+   <img src="figure/PIC1.png" width="100%">
 </p>
 
 **_Figure_**: Visual representations of hand-eye and robot-world calibration for (a) an articulated robot in eye-in-hand configuration, (b) a SCARA robot in eye-in-hand configuration, (c) an articulated robot in eye-to-base configuration, and (d) an articulated robot in eye-to-base configuration.
@@ -16,7 +16,7 @@ nonsingular HE&RW calibration methods. This repository contains the implementati
 
 
 <p align="center">
-   <img src="figure/PIC2.png" width="75%">
+   <img src="figure/PIC2.png" width="100%">
 </p>
 
 **_Figure_**: In pose-based calibration (left), the camera pose estimation is performed independently before the HE&RW estimation. In point-based calibration (right), the HE&RW estimation is conducted directly without camera pose estimation.
