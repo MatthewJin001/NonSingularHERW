@@ -27,10 +27,11 @@ nonsingular HE&RW calibration methods. This repository contains the implementati
 
 ## How to use
 ### Dependencies
-The code runs on Matlab R2023a without any additional dependencies. The necessary auxiliary functions can be found in the "auxiliary" folder.
+The code runs on Matlab R2023a without any additional dependencies. All necessary auxiliary functions and a simulated SCARA data are provided.
+
 
 ### Main Instructions
-To run the fusion calibration, call
+To perform the HE&RW calibration, taking the proposed pose-based method as an example, call
 ```
 [R_out,t_out,rnti]=HECfuse(RAin,tAin,RBin,tBin)
 ```
