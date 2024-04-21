@@ -50,5 +50,5 @@ Note that ``n`` is the measurement number and ``m`` is the pattern point number.
 * ``Demo1`` : Demo 1 shows that under SCARA data, conventional methods do not converge iteratively (i.e. singular), while the proposed method can converge to stable values.
 * ``Demo2`` : Demo 2 shows the adaptation scenarios of non-singular pose-based and point-based methods.
 
-## Please refer to the submitted article or reference for details.
+## Please refer to the submitted article for details.
 
