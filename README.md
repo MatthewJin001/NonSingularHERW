@@ -1,4 +1,4 @@
-## （Ing...）Nonsingular Hand-Eye and Robot-World Calibration for SCARA-Type Robots
+## Nonsingular Hand-Eye and Robot-World Calibration for SCARA-Type Robots
 
 ## Reference paper
 Nonsingular Hand-Eye and Robot-World Calibration for SCARA-Type Robots: A Comparative Study (2024), submitted to IEEE TII.
