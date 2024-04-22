@@ -53,10 +53,7 @@ where
 Note that ``n`` is the measurement number and ``m`` is the pattern point number.
 
 ### Demos
-* ``Demo1`` : Demo 1 shows that under SCARA data, conventional methods do not converge iteratively (i.e. singular), while the proposed method can converge to stable values.
-* ``Demo2`` : Demo 2 shows the adaptation scenarios of non-singular pose-based and point-based methods.
-
-
+* ``Demo1`` : Demo 1 runs the conventional point-based method and produces the following singular results.
 ```
 Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.144526e-35. 
 > In con_point (line 39)
@@ -93,6 +90,45 @@ The estimated value of  TY:
    -0.0000    0.0000    0.0000   -0.0000
    -0.0000    0.0000   -0.0000   -5.7646
          0         0         0    0.0000
+```
+
+* ``Demo2`` : Demo 2 runs the proposed point-based method and produces the following nonsingular results.
+```
+The true value of original TX:
+   -0.7040   -0.6935    0.1533   28.7515
+    0.6883   -0.7194   -0.0937   35.3894
+    0.1753    0.0395    0.9837  -35.4687
+         0         0         0    1.0000
+
+The true value of redefined TX:
+   -0.7040   -0.6935    0.1533   33.3200
+    0.6883   -0.7194   -0.0937   32.5969
+    0.1753    0.0395    0.9837   -6.1537
+         0         0         0    1.0000
+
+The estimated value of redefined TX:
+   -0.7104   -0.6859    0.1575   31.8659
+    0.6816   -0.7263   -0.0888   30.1779
+    0.1753    0.0443    0.9835   -5.4886
+         0         0         0    1.0000
+
+The true value of original TY:
+   -0.0384   -0.9992   -0.0081 -392.4000
+   -0.9993    0.0384    0.0017  138.5000
+   -0.0014    0.0082   -1.0000  -29.8000
+         0         0         0    1.0000
+
+The true value of redefined TY:
+   -0.0384   -0.9992   -0.0081 -392.4000
+   -0.9993    0.0384    0.0017  138.5000
+   -0.0014    0.0082   -1.0000         0
+         0         0         0    1.0000
+
+The estimated value of redefined TY:
+   -0.0288   -0.9996   -0.0028 -393.7291
+   -0.9996    0.0288    0.0012  138.8615
+   -0.0011    0.0028   -1.0000         0
+         0         0         0    1.0000
 ```
 
 ## Please refer to the submitted article for details.
