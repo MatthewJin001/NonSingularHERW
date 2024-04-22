@@ -56,5 +56,44 @@ Note that ``n`` is the measurement number and ``m`` is the pattern point number.
 * ``Demo1`` : Demo 1 shows that under SCARA data, conventional methods do not converge iteratively (i.e. singular), while the proposed method can converge to stable values.
 * ``Demo2`` : Demo 2 shows the adaptation scenarios of non-singular pose-based and point-based methods.
 
+
+```
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.144526e-35. 
+> In con_point (line 39)
+In demo1 (line 8)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.050568e-50. 
+> In con_point (line 94)
+In demo1 (line 8)
+ 
+The true value of  TX:
+   -0.7040   -0.6935    0.1533   28.7515
+    0.6883   -0.7194   -0.0937   35.3894
+    0.1753    0.0395    0.9837  -35.4687
+         0         0         0    1.0000
+
+The estimated value of  TX:
+   1.0e+20 *
+
+   -0.0000   -0.0000    0.0000   -5.2379
+    0.0000   -0.0000   -0.0000    0.6839
+    0.0000    0.0000    0.0000   -2.3081
+         0         0         0    0.0000
+
+The true value of  TY:
+   -0.0384   -0.9992   -0.0081 -392.4000
+   -0.9993    0.0384    0.0017  138.5000
+   -0.0014    0.0082   -1.0000  -29.8000
+         0         0         0    1.0000
+
+The estimated value of  TY:
+   1.0e+20 *
+
+   -0.0000   -0.0000    0.0000   -0.0000
+   -0.0000    0.0000    0.0000   -0.0000
+   -0.0000    0.0000   -0.0000   -5.7646
+         0         0         0    0.0000
+```
+
 ## Please refer to the submitted article for details.
 
