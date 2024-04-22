@@ -35,8 +35,7 @@ Besides, we provide two demos for testing.
 ### Dependencies
 The code runs on Matlab R2023a without any additional dependencies. All necessary auxiliary functions and a simulated SCARA data are provided.
 
-
-### Main Instructions
+### Instructions
 To perform the HE&RW calibration, taking the proposed pose-based method as an example, call
 ```
 [RX_out,tX_out,RY_out,tY_out]=pro_pose(RAi,tAi,qij,rj,K)
